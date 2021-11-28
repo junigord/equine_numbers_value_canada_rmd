@@ -5,7 +5,7 @@ output:
     toc: true
 #params:
 #  province : "Alberta"
-#bibliography: ./horse_bib.bib
+bibliography: ./horse_bib.bib
 ---
 
 ```{r setup, include=FALSE}
