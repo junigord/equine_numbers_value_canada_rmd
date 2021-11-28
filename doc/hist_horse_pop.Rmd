@@ -3,9 +3,9 @@ title: "Historical horse population in Canada"
 output: 
   github_document:
     toc: true
-#params:
-#  province : "Alberta"
-bibliography: ./horse_bib.bib
+params:
+  province : "Alberta"
+bibliography: horse_bib.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -38,7 +38,7 @@ The R programming language and the following R packages were used to perform the
 
 ## Results
 
-```{r plot horses, fig.width=10, fig.height=3, fig.cap="Historical number of horses per province across Canada + out.width = '100%'"}
+```{r plot horses, fig.width=10, fig.height=3, fig.cap="Historical number of horses per province across Canada", out.width = '50%'}
 horse_plot <- ggplot(horse_pop, aes(x = Ref_Date, y = Value)) +
   geom_point() +
   geom_line() +
@@ -65,9 +65,9 @@ max_horses <- horse_pop %>%
 knitr::kable(max_horses, caotion = "Max Horse Table")
 ```
 
-Below we zoom in and look at the province of \`r params$province\`:
+Below we zoom in and look at the province of `r params$province`:
 
-```{r plot province, fig.width=5, fig.height=4, fig.cap="Case example: Historical number of horses" + out.width = '100%'}
+```{r plot province, fig.width=5, fig.height=4, fig.cap="Case example: Historical number of horses", out.width = '50%%'}
 province_plot <- horse_pop %>% 
   filter(GEO == "Alberta") %>% 
   ggplot(aes(x = Ref_Date, y = Value)) +
@@ -82,4 +82,8 @@ province_plot <- horse_pop %>%
 province_plot
 ```
 
-## References
+@tidyverse
+@knitr
+@R
+
+# References
